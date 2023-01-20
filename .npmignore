@@ -1,0 +1,11 @@
+./.prettierrc
+
+./.gitignore
+
+./tsconfig.json
+
+./node_modules
+
+./src
+
+*.ts
