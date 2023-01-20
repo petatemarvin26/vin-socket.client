@@ -1,5 +1,3 @@
-import {SocketAbstract} from "abstracts";
-import {SocketInterface} from "interfaces";
-import {Client} from "classes";
+import {Socket} from "./classes/index.js";
 
-export default Client;
+export default Socket;

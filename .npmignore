@@ -1,11 +1,9 @@
-./.prettierrc
+.prettierrc
+.npmignore
+.gitignore
 
-./.gitignore
+tsconfig.json
+Makefile
 
-./tsconfig.json
-
-./node_modules
-
-./src
-
-*.ts
+node_modules
+scripts

@@ -1,14 +1,16 @@
 {
-  "ts-node": {
-    "require": ["tsconfig-paths/register"]
-  },
   "compilerOptions": {
-    "baseUrl": "src",
-    "outDir": "./lib",
-    "target": "ES6",
-    "module": "CommonJS",
-    "moduleResolution": "node"
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "outDir": "lib",
+    "target": "ES2015",
+    "module": "ES2015",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": false
   },
-  "include": ["./src/**/*", "*.ts", "package.json"],
+  "include": ["./src/**/*", "*.d.ts"],
   "exclude": ["node_modules"]
 }

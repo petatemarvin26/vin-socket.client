@@ -1,4 +1,4 @@
-import Client from "./Client";
-import Socket from "./Socket";
+import Socket from "./Socket.js";
+import Client from "./Client.js";
 
-export {Client, Socket};
+export {Socket, Client};

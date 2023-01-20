@@ -1,3 +1,3 @@
-import {SocketInterface} from "./Socket";
+import {SocketInterface} from "./Socket.js";
 
 export {SocketInterface};

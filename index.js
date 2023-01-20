@@ -1,3 +1,3 @@
-"use strict";
+import Socket from "./lib/index.js";
 
-module.exports = require("./lib");
+export default Socket;
