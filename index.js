@@ -1,3 +1,3 @@
-import Socket from "./lib/index.js";
+import SocketClient from "./lib/index.js";
 
-export default Socket;
+export default SocketClient;
