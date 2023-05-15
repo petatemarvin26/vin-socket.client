@@ -1,0 +1,25 @@
+{
+  "name": "vin-socket.client",
+  "version": "1.0.0",
+  "description": "This application is maintain the light weight of transmision and performance over websocket connection",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf ./dist; webpack --env production --config ./webpack.config.js"
+  },
+  "keywords": [
+    "Websocket"
+  ],
+  "author": "Marvin Petate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petatemarvin26/vin-socket.client/issues"
+  },
+  "homepage": "https://github.com/petatemarvin26/vin-socket.client#readme",
+  "devDependencies": {
+    "@types/webpack": "^5.28.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
