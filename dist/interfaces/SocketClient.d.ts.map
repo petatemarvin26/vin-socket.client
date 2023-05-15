@@ -1,1 +1,0 @@
-{"version":3,"file":"SocketClient.d.ts","sourceRoot":"","sources":["../../src/interfaces/SocketClient.ts"],"names":[],"mappings":"AAAA,UAAU,QAAQ;IAChB,IAAI,IAAI,CAAC;CACV;AAED,UAAU,qBAAqB;IAC7B,QAAQ,EAAE,QAAQ,CAAC;CACpB;AAED,OAAO,EAAC,qBAAqB,EAAE,QAAQ,EAAC,CAAC"}
