@@ -3,7 +3,9 @@
     "baseUrl": "./src",
     "paths": {
       "classes/*": ["classes/*"],
-      "interfaces/*": ["interfaces/*"]
+      "interfaces/*": ["interfaces/*"],
+      "common/*": ["common/*"],
+      "utils/*": ["utils/*"]
     },
     "target": "ES6",
     "module": "CommonJS",
