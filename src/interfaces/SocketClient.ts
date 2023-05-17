@@ -1,9 +1,34 @@
+import {Callback} from 'common/interface';
+
+interface CallbackConnect {
+  (event: WebSocketEventMap['open']): void;
+}
+
+interface On {
+  (event: string, callback: Callback): void;
+}
+
+interface OnConnect {
+  (callback: CallbackConnect): void;
+}
+
 interface OnCreate {
-  (): void;
+  (event: WebSocketEventMap['open']): void;
+}
+
+interface OnMessage {
+  (message: any): void;
+}
+
+interface Emit {
+  (event: string, payload: any): void;
 }
 
 interface SocketClientInterface {
-  onCreate: OnCreate;
+  on: On;
+  emit: Emit;
+  onConnect: OnConnect;
 }
 
-export {SocketClientInterface, OnCreate};
+export {Callback, On, Emit, OnConnect, OnCreate, OnMessage, CallbackConnect};
+export default SocketClientInterface;
