@@ -1,3 +1,20 @@
-import {OnCreate, SocketClientInterface} from './SocketClient';
+import SocketClientInterface, {
+  Callback,
+  Emit,
+  On,
+  OnCreate,
+  OnConnect,
+  OnMessage,
+  CallbackConnect,
+} from './SocketClient';
 
-export {OnCreate, SocketClientInterface};
+export {
+  SocketClientInterface,
+  Callback,
+  Emit,
+  On,
+  OnCreate,
+  OnConnect,
+  OnMessage,
+  CallbackConnect,
+};
