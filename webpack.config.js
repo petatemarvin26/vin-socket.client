@@ -1,4 +1,6 @@
-const {Configuration} = require('webpack');
+const {Configuration, ProvidePlugin} = require('webpack');
+const transform = require('ts-transform-paths').default;
+
 const path = require('path');
 
 const absolute = (dirpath) => {
@@ -30,6 +32,8 @@ const resolve = {
   alias: {
     classes: absolute('src/classes'),
     interfaces: absolute('src/interfaces'),
+    common: absolute('src/common'),
+    utils: absolute('src/utils'),
   },
 };
 
@@ -40,18 +44,35 @@ const modules = {
   rules: [
     {
       test: /.(ts)/i,
-      loader: 'ts-loader',
+      exclude: /node_modules/,
+      use: {
+        loader: 'ts-loader',
+        options: {
+          getCustomTransformers: () => transform(),
+        },
+      },
     },
   ],
 };
 
 /**
+ * @type {Configuration['plugins']}
+ */
+const plugins = [
+  new ProvidePlugin({
+    Buffer: ['buffer', 'Buffer'],
+  }),
+];
+
+/**
  * @type {Configuration}
  */
 const config = {
+  target: 'web',
   entry,
   output,
   resolve,
+  plugins,
   module: modules,
 };
 
