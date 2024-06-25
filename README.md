@@ -24,31 +24,31 @@ npm install vin-socket.client
 
 ### Usage Examples
 
-Listen to server
+Connect to Websocket Server
 
 ```Javascript
-const { createServer } = require("http");
-const { SocketClient } = require("vin-socket.client");
+import {SocketClient} from 'vin-socket.client';
 
-const wsClient = new SocketClient('ws://localhost:3000');
+// global scope
+const socket = new SocketClient('ws://localhost:3200');
 
-wsClient.on("res:message", (payload) => {
-  console.log(`Received payload from server`, payload)
-})
+const App: React.FC = () => {
+
+  useEffect(() => {
+    socket.onConnect(() => {
+      // user has been connected
+    })
+    socket.emit('my:event', {message: 'Hello World'})
+  }, [])
+
+  return (
+    <div>HELLO WORLD</div>
+  )
+}
 
 ```
 
-> NOTE: We recommend to put the instantiation in top level code
-
-Emit to server
-
-```Javascript
-...
-
-wsClient.emit("req:message", {
-  message: `Hello server!`
-})
-```
+> NOTE: We recommend to put the SocketClient instance in global scope or top of the code
 
 #
 
