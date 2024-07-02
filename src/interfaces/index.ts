@@ -6,6 +6,7 @@ import SocketClientInterface, {
   OnConnect,
   OnMessage,
   CallbackConnect,
+  Config,
 } from './SocketClient';
 
 export {
@@ -17,4 +18,5 @@ export {
   OnConnect,
   OnMessage,
   CallbackConnect,
+  Config,
 };

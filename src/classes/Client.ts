@@ -1,4 +1,4 @@
-import {Listener} from 'common/interface';
+import {Listener} from '@/common';
 import {
   Emit,
   On,
@@ -7,19 +7,25 @@ import {
   SocketClientInterface,
   OnCreate,
   OnMessage,
-} from 'interfaces';
-import {toBuffer, toJSON} from 'utils';
+} from '@/interfaces';
+import {Config} from '@/interfaces';
+import {toBuffer, toJSON} from '@/utils';
 
 class SocketClient implements SocketClientInterface {
   private ws: WebSocket;
+  private config?: Config;
   private callbackConnect: CallbackConnect;
   private listeners: Listener[];
 
-  constructor(url: string) {
+  constructor(url: string, config?: Config) {
     const ws = new WebSocket(url);
     this.ws = ws;
     this.listeners = [];
     this.callbackConnect = () => {};
+
+    this.config = {
+      initConnectionDelay: config?.initConnectionDelay || 100,
+    };
 
     ws.addEventListener('open', this.onCreate);
     ws.addEventListener('message', this.onMessage);
@@ -46,7 +52,15 @@ class SocketClient implements SocketClientInterface {
 
   emit: Emit = (event, payload) => {
     const message = toBuffer(event, payload);
-    this.ws.send(message);
+    try {
+      this.ws.send(message);
+      console.log('SUCCESS');
+    } catch (e) {
+      setTimeout(
+        () => this.emit(event, payload),
+        this.config?.initConnectionDelay
+      );
+    }
   };
 }
 

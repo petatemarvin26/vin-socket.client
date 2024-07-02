@@ -1,4 +1,4 @@
-import {Callback} from 'common/interface';
+import {Callback} from '@/common';
 
 interface CallbackConnect {
   (event: WebSocketEventMap['open']): void;
@@ -30,5 +30,22 @@ interface SocketClientInterface {
   onConnect: OnConnect;
 }
 
-export {Callback, On, Emit, OnConnect, OnCreate, OnMessage, CallbackConnect};
+interface Config {
+  /**
+   * This delay is refer to status of connection to avoid emit without handshake,
+   * it only necessary to set if the ws immediately invoke event
+   */
+  initConnectionDelay: number;
+}
+
+export {
+  Callback,
+  On,
+  Emit,
+  OnConnect,
+  OnCreate,
+  OnMessage,
+  CallbackConnect,
+  Config,
+};
 export default SocketClientInterface;
