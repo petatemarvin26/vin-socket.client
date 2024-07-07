@@ -1,8 +1,8 @@
 ## VIN-SOCKET.CLIENT
 
-Is [ES][nodejs] Module, a websocket client side connection that minified the functionalities and strategies of [Websocket][ws] for easy implementation of websocket.
+Is a websocket client side connection that minified the functionalities and strategies of [Websocket][ws] for easy implementation of websocket.
 
-This module required to install its peer module [vin-socket.server][peer-lib] to server side in order to work correctly.
+This module required to install its peer module [vin-socket.server][peer-lib] for server side in order to work correctly.
 
 #
 
@@ -16,9 +16,9 @@ npm install vin-socket.client
 
 ### Features
 
-- easy to consume
-- modern approach
-- background digestion into binary data
+- Easy to consume
+- Modern approach
+- Background digestion as binary
 
 #
 
